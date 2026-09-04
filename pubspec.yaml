@@ -1,0 +1,35 @@
+name: tarot_vibe
+description: "一个单机中文写实塔罗牌应用"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  http: ^1.2.2
+  flutter_secure_storage: ^9.2.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.0
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: assets/icon/app_icon.jpg
+  min_sdk_android: 21
+
+flutter:
+  uses-material-design: true
+
+  # Assets 配置（必须正确！）
+  assets:
+    - assets/images/     # 注意是 assets/（复数）
+    - assets/data/
+  

@@ -1,17 +1,89 @@
-# tarot_vibe
+# ���� Vibe
 
-A new Flutter project.
+һ����**�������������������Ƴ�ȡ**Ϊ���ĵ� Flutter ����Ӧ�ã��ɰ������ DeepSeek �������Ľ����
 
-## Getting Started
+������ API Key Ҳ���Գ��ơ����ƺ��Ķ��������壻AI �������Ҫ�������Ա� Key �Ŀ�ѡ���ܡ���ǰ�ֿ��ʺ���Ϊ Flutter ��������Դ������ģ�� API �����ѧϰԭ�ͣ������Ѿ���֤����ҵ���а汾��
 
-This project is a starting point for a Flutter application.
+## ���й���
 
-A few resources to get you started if this is your first Flutter project:
+- **�����ƿ�**����ǰʵ�ʼ��� 22 �Ŵ󰢿����ƣ������������ơ���λ����λ˵������ӦͼƬ��
+- **�����Ƴ�ȡ�뷭��**������������ȡ�����ƣ������Ƭ�鿴���桢�����뱾�����壻֧�����¿�ʼ��
+- **����������ȶ���ȡ**�������Ⱦ����ı������һ�������Թ�ϣ����������ӣ���ͬ��һ�������õ���ͬ���顣�ⲻ������ģ�ͣ�Ҳ����֤��ͬ˵��һ����ʶ��Ϊͬһ���⡣
+- **��ѡ AI ���**���������������ư�����ȥ�����ڡ�δ������֯������ DeepSeek����ʾģ�͸������������ƽ�����ж�������������ѡ�
+- **�豸�� Key ����**���ṩ API Key �ı��桢�鿴��������棬�洢���ü����� `ApiKeyStore`��ͬһ����� AI ����������ڵ�ǰҳ����ڴ��С�
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+�������̣�
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```text
+�������� �� ���ع����һ�� �� ��ȡ�����Ʋ�ȷ������λ �� �������
+                                              ���� ��ѡ������ DeepSeek ���
+```
+
+## ��������
+
+### ����Ҫ��
+
+�Բֿ������������ļ�Ϊ��׼��
+
+| ��Ŀ | Ҫ���˵�� |
+| --- | --- |
+| Flutter | `pubspec.lock` ���� `>=3.38.4`��ͬʱ��Ҫ�����·� Dart Լ�� |
+| Dart | ���ļ�Ҫ�� `>=3.10.3 <4.0.0`����Ҫֻ���� `pubspec.yaml` �нϿ��� `>=3.3.0 <4.0.0` �ж� |
+| Android ���� | ��Ҫ��Ӧ Android ���������ֿ� Gradle ����ʹ�� Java 17 |
+| �����豸 | �����Ӳ��� Flutter ��⵽��ģ��������� |
+
+�ֿ���� Android��iOS��Web��Windows��macOS��Linux ����Ŀ¼����**Ŀ¼���ڲ���������ƽ̨�Ѿ���֤����**��������Ҫ�����˶԰�ȫ�洢������ƽ̨Ȩ�ޡ�ǩ�����á�
+
+### ��ȡ������
+
+���������ڱ����Ѱ�װ Flutter ������Ŀ��ƽ̨��������ִ�У�
+
+```bash
+git clone https://github.com/xndxyy/tarot_vibe.git
+cd tarot_vibe
+
+flutter doctor
+flutter pub get
+flutter devices
+flutter run
+```
+
+`flutter doctor` ���ڼ�鹤������`flutter devices` ����ȷ�Ͽ���Ŀ�ꣻ`flutter run` ������Ҫʱ����ѡ���豸�����˵���� [Flutter �ٷ��ĵ�](https://docs.flutter.dev/)��
+
+�� README ���������辭��Դ�������þ�̬�˶ԣ�**δ�ڱ����ĵ�������ִ��������װ��Flutter �������������**��
+
+## ���� AI ��Ƚ��
+
+1. ����Ӧ�ã�������Ͻ�Կ��ͼ����롰API ���á���
+2. ��д�Լ��� DeepSeek API Key �����档
+3. �������Ⲣ��ɳ��ƣ������AI ��Ƚ����DeepSeek������
+4. ����ʹ��ʱ������������ѡ����� Key����
+
+��ǰʵ�̶ֹ����� `https://api.deepseek.com/v1/chat/completions`��ģ����Ϊ `deepseek-chat`������ʱΪ 25 �롣�ӿڡ�ģ�Ϳ����ԡ����������Է����ṩ��ʵ�����Ϊ׼�����ֿⲻ�������� Key ����ѷ���
+
+��������˽�߽磺
+
+- Key ͨ�� `flutter_secure_storage` д���豸�˴洢�����屣������������Ŀ��ƽ̨��������Ϊ����Ӧ���Ѿ�ͨ����ȫ��ơ�
+- �û������ Key ������Դ���еı����� `DEEPSEEK_API_KEY` ������ڡ�**��Ҫ�Ѹ��˻������� Key ����׼���ַ��Ŀͻ��ˣ�Ҳ��Ҫ�ύ���ֿ⡣**
+- ֻ�е�� AI ���ʱ�Ż�����⡢����������λ�뱾�����巢�͸� DeepSeek�����س��Ʋ������������
+- û���˺�ϵͳ���ƶ�ͬ����ҳ���еĳ���״̬��AI ������ڴ滺�治����Ϊ��ʷ��¼�־ñ��档
+
+## ���뵼��
+
+| ·�� | ���� |
+| --- | --- |
+| [lib/main.dart](lib/main.dart) | Ӧ����ڡ���ҳ�������һ�������ơ����ƽ�����DeepSeek ��������ҳ |
+| [lib/service/api_key_store.dart](lib/service/api_key_store.dart) | API Key ���豸�˶�д����� |
+| [assets/data/tarot.json](assets/data/tarot.json) | ��ǰʵ�ʲ�����Ƶ� 22 ���Ƽ��������� |
+| [assets/images/](assets/images/) | ����ͼƬ������ͼƬ�������������ƿ� |
+| [pubspec.yaml](pubspec.yaml) / [pubspec.lock](pubspec.lock) | ��������Դ�����������汾 |
+| [android/app/build.gradle.kts](android/app/build.gradle.kts) | Android Ӧ�ñ�ʶ����������ǩ������ |
+
+## ��ǰ�߽�
+
+- ��ǰ���������� 78 �ų���ʵ�֣�С������ͼƬ������ԴĿ¼�У���δ����ǰ JSON �ƿ���ء�
+- AI ���������ʽ�ı�������֤׼ȷ��һ�»������ʾ��Ҫ���������ݽ������������ҷ�˼�����ܾݴ�����ҽ�ơ����ɡ�Ͷ�ʵ���Ҫ���ߡ�
+- �ֿ�δ�ṩҵ���Զ�������Ŀ¼�� CI ���̣������쳣����ͬ��Ļ�ߴ����ƽ̨��Ϊ����ʵ�ʲ��ԡ�
+- Android ��ʹ��ʾ��Ӧ�ñ�ʶ��release ����ʹ�� debug ǩ������ʽ�ַ�ǰ��Ҫ�������ǩ����ƽ̨�����뷢����֤��
+- �ֿ⵱ǰδ���� LICENSE �ļ��������ɶ��������������⸴�ơ��޸Ļ�����Ȩ�����ô��뼰�����ز�ǰ��������ȷ����Ȩ�����˶��ز���Դ��Ȩ����
+
